@@ -1,0 +1,370 @@
+@media (max-width: 430px) {
+    html, body {
+        font-size: 15px;
+    }
+    .container {
+        max-width: 100vw;
+        padding: 2vw;
+    }
+    .calendar {
+        gap: 2px;
+    }
+    .cell {
+        height: 3.5rem;
+        padding: 2px;
+        font-size: 12px;
+    }
+    .date-number {
+        font-size: 12px;
+    }
+    .badge {
+        font-size: 8px;
+        padding: 1px 3px;
+    }
+    .panel {
+        gap: 4px;
+    }
+    .card {
+        padding: 5px;
+    }
+    .card h3 {
+        font-size: 13px;
+    }
+    .muted, .code, .meta {
+        font-size: 10px;
+    }
+    .list li {
+        padding: 5px;
+    }
+}
+/* Mobile optimization */
+@media (max-width: 600px) {
+    .container {
+        padding: 4px;
+    }
+    .topbar {
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+    .today-line {
+        font-size: 12px;
+    }
+    .today-text {
+        font-size: 15px;
+    }
+    .controls {
+        gap: 4px;
+    }
+    .btn, .select {
+        padding: 6px 8px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    .month-title {
+        font-size: 16px;
+    }
+    .calendar {
+        gap: 4px;
+    }
+    .cell {
+        height: 4.5rem;
+        padding: 4px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
+    .date-number {
+        font-size: 13px;
+    }
+    .badge {
+        font-size: 9px;
+        padding: 1px 5px;
+    }
+    .tag-homnay {
+        font-size: 9px;
+        padding: 2px 3px;
+    }
+    .snippet {
+        margin-top: 2px;
+        gap: 2px;
+    }
+    .item-line {
+        font-size: 10px;
+    }
+    .panel {
+        margin-top: 10px;
+        gap: 8px;
+    }
+    .card {
+        padding: 8px;
+        border-radius: 8px;
+    }
+    .card h3 {
+        font-size: 15px;
+    }
+    .muted, .code, .meta {
+        font-size: 11px;
+    }
+    .list li {
+        padding: 7px;
+        border-radius: 8px;
+    }
+    .row {
+        gap: 4px;
+    }
+    .title {
+        font-size: 13px;
+    }
+}
+/* Tách CSS từ index.html */
+:root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #0d9488;
+    --accent-50: #d1fae5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.topbar {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .topbar {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+}
+
+.today-line {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.today-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f9fafb;
+}
+
+.select {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.month-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.dow {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.grid {
+    display: contents;
+}
+
+.cell {
+    position: relative;
+    height: 7.5rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 8px;
+    text-align: left;
+    background: var(--card);
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .cell {
+        height: 8.5rem;
+    }
+}
+
+.cell[disabled] {
+    background: #f3f4f6;
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-number {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: #f9fafb;
+}
+
+.cell.today {
+    outline: 2px solid var(--accent);
+}
+
+.cell.today .date-number {
+    color: #0f766e;
+    font-weight: 800;
+}
+
+.tag-homnay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #0f766e;
+    background: var(--accent-50);
+    padding: 4px 6px;
+}
+
+.snippet {
+    margin-top: 6px;
+    display: grid;
+    gap: 4px;
+}
+
+.item-line {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-time {
+    font-weight: 600;
+}
+
+.panel {
+    margin-top: 24px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .panel {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.card h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: grid;
+    gap: 10px;
+}
+
+.list li {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.code {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.meta {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #374151;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
